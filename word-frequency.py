@@ -1,14 +1,10 @@
 ### Word-Frequency ###
 
+
 with open("sample.txt") as infile:
-    text_document = infile.read()
-
-my_list = text_document.split()
-print(my_list)
-
-my_dict = {}
-
-for word in my_list:
-    if word not in my_dict:
-        my_dict[word] = 0
-    my_dict[word] += 1
+    wordcounter = {}
+    for word in infile.read().split():
+        if word not in wordcounter:
+            wordcounter[word] = 0
+        wordcounter[word] += 1
+    print(wordcounter)
